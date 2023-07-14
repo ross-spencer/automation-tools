@@ -1,46 +1,21 @@
-[![GitHub CI](https://github.com/artefactual/automation-tools/actions/workflows/test.yml/badge.svg)](https://github.com/artefactual/automation-tools/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/artefactual/automation-tools/branch/master/graph/badge.svg?token=QSVCgvvWuw)](https://codecov.io/gh/artefactual/automation-tools)
-
 Automation Tools
 ================
 
 The Automation Tools project is a set of Python scripts, that are designed to
 automate the processing of transfers in an Archivematica pipeline.
 
-<!-- doctoc: https://www.npmjs.com/package/doctoc -->
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+# Table of contents
 
-
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-  - [Parameters](#parameters)
-    - [Setting processing rules](#setting-processing-rules)
-    - [Getting the transfer source UUID](#getting-the-transfer-source-uuid)
-    - [Getting API keys](#getting-api-keys)
-  - [Hooks](#hooks)
-    - [get-accession-id](#get-accession-id)
-    - [pre-transfer hooks](#pre-transfer-hooks)
-    - [user-input](#user-input)
-  - [Logs](#logs)
-  - [Multiple automated transfer instances](#multiple-automated-transfer-instances)
-  - [`transfer_async.py`](#transfer_asyncpy)
-  - [Tips for ingesting DSpace exports](#tips-for-ingesting-dspace-exports)
-- [DIP creation and upload](#dip-creation-and-upload)
-  - [Configuration](#configuration-1)
-  - [Parameters](#parameters-1)
-    - [`aips/create_dip.py`:](#aipscreate_dippy)
-    - [`dips/atom_upload.py`:](#dipsatom_uploadpy)
-    - [`dips/storage_service_upload.py`:](#dipsstorage_service_uploadpy)
-    - [`aips/create_dips_job.py`:](#aipscreate_dips_jobpy)
-    - [Getting Storage Service API key](#getting-storage-service-api-key)
-- [DIP export to NetX](#dip-export-to-netx)
-- [Reingest](#reingest)
-- [Related Projects](#related-projects)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+- [Automation Tools](#automation-tools)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Configuration](#configuration)
+  - [DIP creation and upload](#dip-creation-and-upload)
+  - [DIP export to NetX](#dip-export-to-netx)
+  - [Reingest](#reingest)
+  - [Duplicate Detection](#duplicate-detection)
+  - [Related Projects](#related-projects)
 
 Requirements
 ------------
@@ -934,6 +909,13 @@ Via the API (users will need to filter on package UUID):
 
 * *http://{archivematica-url}}/transfer/status/*
 * *http://{archivematica-url}}/ingest/status/*
+
+Duplicate Detection
+-------------------
+
+Entry-point for duplicate-detection using this module: [here][dupe-1]
+
+[dupe-1]: https://github.com/ross-spencer/automation-tools-dupe-detect/blob/e41a3bc49288c347c135b68b83931f4f704d9b7b/reports/duplicates/README.md
 
 Related Projects
 ----------------
